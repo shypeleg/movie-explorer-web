@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "noUnusedLocals": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "declaration": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es5",
+    "jsx": "react",
+    "lib": ["dom", "es2017"],
+    "types": ["mocha", "chai", "node"]
+  },
+  "include": [
+    "./test/**/*.ts",
+    "./test/**/*.tsx",
+    "./src/**/*.ts"
+  ],
+  "files": [
+    "./test/matchers/rendered.d.ts",
+    "./test/matchers/chai-subset.d.ts"
+  ]
+}

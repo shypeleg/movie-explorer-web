@@ -1,0 +1,10 @@
+{
+  "extends": [
+    "tslint-config-yoshi"
+  ],
+  "rules": {
+    "no-invalid-this": false,
+    "object-curly-spacing": [true, "always"],
+    "no-floating-promises": false
+  }
+}
