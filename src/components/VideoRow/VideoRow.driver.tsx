@@ -48,6 +48,11 @@ export class VideoRowDriver {
         wrapper: this.component,
         dataHook: 'video-row-country',
       }),
+    plot: () =>
+      textTestkitFactory({
+        wrapper: this.component,
+        dataHook: 'video-row-plot',
+      }),
     genre: () =>
       textTestkitFactory({
         wrapper: this.component,
@@ -58,35 +63,9 @@ export class VideoRowDriver {
         wrapper: this.component,
         dataHook: 'video-row-runtime',
       }),
-    starsLabel: () =>
-      textTestkitFactory({
-        wrapper: this.component,
-        dataHook: 'video-row-stars-label',
-      }),
-    writerLabel: () =>
-      textTestkitFactory({
-        wrapper: this.component,
-        dataHook: 'video-row-writer-label',
-      }),
-    directorLabel: () =>
-      textTestkitFactory({
-        wrapper: this.component,
-        dataHook: 'video-row-director-label',
-      }),
-    stars: () =>
-      textTestkitFactory({
-        wrapper: this.component,
-        dataHook: 'video-row-stars',
-      }),
-    writer: () =>
-      textTestkitFactory({
-        wrapper: this.component,
-        dataHook: 'video-row-writer',
-      }),
-    director: () =>
-      textTestkitFactory({
-        wrapper: this.component,
-        dataHook: 'video-row-director',
-      }),
+
+    stars: () => this.get.byDataHook('video-row-stars'),
+    writer: () => this.get.byDataHook('video-row-writer'),
+    director: () => this.get.byDataHook('video-row-director'),
   };
 }

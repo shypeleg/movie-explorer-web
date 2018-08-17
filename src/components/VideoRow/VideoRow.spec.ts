@@ -5,14 +5,11 @@ import {
 import { VideoRowDriver } from './VideoRow.driver';
 import 'mocha';
 import { expect, use } from 'chai';
-import * as sinonChai from 'sinon-chai';
-import { clearMocks } from './../../../test/helpers/nock-helpers';
 import renderedMatcher from '../../../test/matchers/rendered';
 import { Chance } from 'chance';
 
 const chance = new Chance();
 
-use(sinonChai);
 use(renderedMatcher);
 
 describe('Movie Explorer', () => {
@@ -25,7 +22,6 @@ describe('Movie Explorer', () => {
 
   afterEach(() => {
     driver.cleanup();
-    clearMocks();
   });
 
   it('should have a poster', () => {
@@ -50,56 +46,48 @@ describe('Movie Explorer', () => {
     expect(driver.get.title().getText()).to.equal(`${title} (${year})`);
   });
 
+  it('should display the plot', () => {
+    const plot = chance.paragraph();
+
+    driver.given.video(video.given.imdbPlot(plot).build()).when.render();
+    expect(driver.get.plot().getText()).to.equal(plot);
+  });
+
   it('should have country', () => {
-    const country = chance.string();
+    const country = chance.word();
     driver.given.video(video.given.imdbCountry(country).build()).when.render();
     expect(driver.get.country().getText()).to.equal(country);
   });
 
   it('should have genre', () => {
-    const genre = chance.string();
+    const genre = chance.word();
     driver.given.video(video.given.imdbGenres(genre).build()).when.render();
     expect(driver.get.genre().getText()).to.equal(genre);
   });
 
   it('should have duration', () => {
-    const runtime = chance.string();
+    const runtime = chance.word();
     driver.given.video(video.given.imdbRuntime(runtime).build()).when.render();
     expect(driver.get.runtime().getText()).to.equal(runtime);
   });
 
-  it('should have director label', () => {
-    driver.when.render();
-    expect(driver.get.directorLabel().getText()).to.equal('Director');
-  });
-
   it('should have director', () => {
-    const director = chance.string();
+    const director = chance.word();
     driver.given
       .video(video.given.imdbDirector(director).build())
       .when.render();
-    expect(driver.get.director().getText()).to.equal(director);
-  });
-
-  it('should have writer label', () => {
-    driver.when.render();
-    expect(driver.get.writerLabel().getText()).to.equal('Writer');
+    expect(driver.get.director()).to.be.rendered();
   });
 
   it('should have writer', () => {
-    const writer = chance.string();
+    const writer = chance.word();
     driver.given.video(video.given.imdbWriter(writer).build()).when.render();
-    expect(driver.get.writer().getText()).to.equal(writer);
-  });
-
-  it('should have stars label', () => {
-    driver.when.render();
-    expect(driver.get.starsLabel().getText()).to.equal('Stars');
+    expect(driver.get.writer()).to.be.rendered();
   });
 
   it('should have stars', () => {
-    const stars = chance.string();
+    const stars = chance.word();
     driver.given.video(video.given.imdbActors(stars).build()).when.render();
-    expect(driver.get.stars().getText()).to.equal(stars);
+    expect(driver.get.stars()).to.be.rendered();
   });
 });

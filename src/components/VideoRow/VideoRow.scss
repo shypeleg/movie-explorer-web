@@ -1,7 +1,7 @@
 .row {
   display: flex;
   width: 100%;
-  height: 320px;
+  height: 350px;
 }
 
 .details {
@@ -14,9 +14,10 @@
   .top-left {
     position: absolute;
     width: 80%;
-    height: 50%;
     top: 0;
     left: 0;
+    max-height: 267px;
+    overflow: auto;
   }
 
   .top-right {
@@ -28,7 +29,7 @@
   .bottom-left {
     position: absolute;
     width: 80%;
-    height: 125px;
+    height: 83px;
     bottom: 0;
     left: 0;
   }
@@ -41,7 +42,7 @@
     right: 0;
   }
   .property {
-    margin-bottom: 20px;
+    margin-bottom: 3px;
   }
   .label {
     margin-right: 25px;

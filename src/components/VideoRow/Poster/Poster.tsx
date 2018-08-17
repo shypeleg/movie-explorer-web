@@ -7,7 +7,6 @@ export interface IPosterProps {
 
 export class Poster extends React.PureComponent<IPosterProps> {
   render() {
-    // todo: check the video logo thing.
     return (
       <div
         className={css.poster}
