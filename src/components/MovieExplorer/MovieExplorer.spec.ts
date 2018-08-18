@@ -24,6 +24,7 @@ describe('Movie Explorer', () => {
     driver.when.render();
     expect(driver.get.header()).to.be.rendered();
   });
+
   it('should have some video rows', () => {
     driver.when.render();
     expect(driver.get.row().length).to.equal(driver.videos.length);

@@ -10,6 +10,7 @@
     <script src="https://${clientTopology.staticsDomain}/unpkg/react@15.6.1/dist/react#if(!${debug}).min#{end}.js"></script>
     <script src="https://${clientTopology.staticsDomain}/unpkg/react-dom@15.6.1/dist/react-dom#if(!${debug}).min#{end}.js"></script>
     <script type="text/javascript" src="http://static.parastorage.com/unpkg/urijs@1.18.0/src/URI.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"> </script>
     ${newRelicEndUserHeader}
   </head>
   <body>

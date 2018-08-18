@@ -2,11 +2,11 @@ import * as React from 'react';
 import * as css from './VideoRow.scss';
 import { IVideo } from '../../types/movieExplorerTypes';
 import { Poster } from './Poster/Poster';
-import Text from 'wix-style-react/Text';
 import { Title } from './Title/Title';
 import { Subtitle } from './Subtitle/Subtitle';
 import { Plot } from './Plot/Plot';
 import { Property } from './Property/Property';
+import { Ratings } from './Ratings/Ratings';
 
 export interface IVideoRowProps {
   video: IVideo;
@@ -48,8 +48,10 @@ export class VideoRow extends React.PureComponent<IVideoRowProps> {
               dataHook="video-row-stars"
             />
           </div>
-          <div className={css.topRight}>hi</div>
-          <div className={css.bottomRight}>hi</div>
+          <div className={css.topRight}>
+            <Ratings rating={imdbData.rating} votes={imdbData.votes} />
+          </div>
+          <div className={css.bottomRight} />
         </div>
       </div>
     );

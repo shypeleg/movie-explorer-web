@@ -67,5 +67,6 @@ export class VideoRowDriver {
     stars: () => this.get.byDataHook('video-row-stars'),
     writer: () => this.get.byDataHook('video-row-writer'),
     director: () => this.get.byDataHook('video-row-director'),
+    ratings: () => this.get.byDataHook('video-row-imdb-text-rating'),
   };
 }

@@ -3,7 +3,7 @@ import './Root.scss';
 import { Provider } from 'react-redux';
 import { configureWixAxiosInstance } from '../../utils/axiosInstance';
 import { configureStore } from '../../utils/configureStore';
-import { IState } from '../../types/movieExplorerTypes';
+import { IState, Sort } from '../../types/movieExplorerTypes';
 import MovieExplorer from '../MovieExplorer/MovieExplorer.container';
 
 export interface IRootProps {
@@ -20,6 +20,7 @@ export class Root extends React.PureComponent<IRootProps, any> {
 
     const initialState: IState = {
       videos: props.videos,
+      sort: Sort.byRecent,
     };
 
     this.store = configureStore(initialState);

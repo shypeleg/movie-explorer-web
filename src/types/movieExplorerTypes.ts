@@ -30,8 +30,16 @@ export interface IVideo {
   imdbId: string;
   searchEngineImdbLink?: string;
   imdbData?: IMovie;
+  fileInfo?: {
+    accessTime: Date;
+    modifiedTime: Date;
+  };
 }
-
+export enum Sort {
+  byRecent = 'recent',
+  byImdbRating = 'imdb',
+}
 export interface IState {
   videos: IVideo[];
+  sort: Sort;
 }

@@ -80,6 +80,10 @@ export class VideoBuilder {
       this.video.imdbData.rating = p;
       return this;
     },
+    imdbVotes: (p: string) => {
+      this.video.imdbData.votes = p;
+      return this;
+    },
     imdbYear: (p: string) => {
       this.video.imdbData.year = p;
       return this;

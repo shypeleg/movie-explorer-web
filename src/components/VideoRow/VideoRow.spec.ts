@@ -85,9 +85,22 @@ describe('Movie Explorer', () => {
     expect(driver.get.writer()).to.be.rendered();
   });
 
-  it('should have stars', () => {
+  it('should have actors', () => {
     const stars = chance.word();
     driver.given.video(video.given.imdbActors(stars).build()).when.render();
     expect(driver.get.stars()).to.be.rendered();
+  });
+  it('should have ratings', () => {
+    const ratings = '7.1';
+    const votes = chance.integer({ min: 20000, max: 150000 });
+    driver.given
+      .video(
+        video.given
+          .imdbRating(ratings)
+          .given.imdbVotes(votes.toString())
+          .build(),
+      )
+      .when.render();
+    expect(driver.get.ratings()).to.be.rendered;
   });
 });
