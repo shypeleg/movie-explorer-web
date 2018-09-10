@@ -5,7 +5,7 @@
   "private": false,
   "author": {
     "name": "Shy Peleg",
-    "email": "shyp@wix.com"
+    "email": "shy.peleg@gmail.com"
   },
   "scripts": {
     "start": "yoshi start",
@@ -59,6 +59,7 @@
     "classnames": "^2.2.6",
     "data-capsule": "^1.0.80",
     "imdb-api": "^4.0.0",
+    "linq": "^3.1.0",
     "lodash.sortby": "^4.7.0",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",

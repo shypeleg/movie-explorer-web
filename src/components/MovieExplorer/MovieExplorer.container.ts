@@ -1,4 +1,5 @@
 import { selectMovies } from './../../selectors/selectors';
+import { fetchVideos } from '../../actions/actions';
 
 import { connect } from 'react-redux';
 import { IState } from '../../types/movieExplorerTypes';
@@ -9,4 +10,7 @@ function mapStateToProps(state: IState) {
     videos: selectMovies(state),
   };
 }
-export default connect(mapStateToProps)(MovieExplorer);
+export default connect(
+  mapStateToProps,
+  { fetchVideos },
+)(MovieExplorer);

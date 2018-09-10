@@ -1,9 +1,10 @@
 import * as React from 'react';
 import * as css from './Header.scss';
-import { IVideo } from '../../types/movieExplorerTypes';
+import { Filter, Sort } from '../../types/movieExplorerTypes';
 
 export interface IHeaderProps {
-  videos: IVideo[];
+  filterVideos(filter: Filter);
+  sortVideos(sort: Sort);
 }
 
 export class Header extends React.PureComponent<IHeaderProps> {

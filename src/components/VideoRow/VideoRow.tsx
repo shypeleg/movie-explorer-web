@@ -23,7 +23,11 @@ export class VideoRow extends React.PureComponent<IVideoRowProps> {
         <Poster posterUrl={imdbData.poster} />
         <div className={css.details}>
           <div className={css.topLeft}>
-            <Title title={imdbData.title} movieYear={movieyear} />
+            <Title
+              title={imdbData.title}
+              backupName={video.searchableName}
+              movieYear={movieyear}
+            />
             <Subtitle
               country={imdbData.country}
               genres={imdbData.genres}
@@ -47,9 +51,18 @@ export class VideoRow extends React.PureComponent<IVideoRowProps> {
               value={imdbData.actors}
               dataHook="video-row-stars"
             />
+            <Property
+              label="File Name"
+              value={video.filePath}
+              dataHook="video-row-file-name"
+            />
           </div>
           <div className={css.topRight}>
-            <Ratings rating={imdbData.rating} votes={imdbData.votes} />
+            <Ratings
+              rating={imdbData.rating}
+              votes={imdbData.votes}
+              ratings={imdbData.ratings}
+            />
           </div>
           <div className={css.bottomRight} />
         </div>

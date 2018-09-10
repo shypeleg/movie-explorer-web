@@ -3,24 +3,21 @@ import './Root.scss';
 import { Provider } from 'react-redux';
 import { configureWixAxiosInstance } from '../../utils/axiosInstance';
 import { configureStore } from '../../utils/configureStore';
-import { IState, Sort } from '../../types/movieExplorerTypes';
+import { IState, Sort, Filter } from '../../types/movieExplorerTypes';
 import MovieExplorer from '../MovieExplorer/MovieExplorer.container';
 
-export interface IRootProps {
-  videos;
-}
-
-export class Root extends React.PureComponent<IRootProps, any> {
+export class Root extends React.PureComponent {
   private readonly store;
 
-  constructor(props: IRootProps) {
+  constructor(props) {
     super(props);
 
     configureWixAxiosInstance({ baseURL: '/' });
 
     const initialState: IState = {
-      videos: props.videos,
+      videos: [],
       sort: Sort.byRecent,
+      filter: Filter.movie,
     };
 
     this.store = configureStore(initialState);

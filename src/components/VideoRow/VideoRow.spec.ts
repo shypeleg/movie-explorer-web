@@ -90,6 +90,7 @@ describe('Movie Explorer', () => {
     driver.given.video(video.given.imdbActors(stars).build()).when.render();
     expect(driver.get.stars()).to.be.rendered();
   });
+
   it('should have ratings', () => {
     const ratings = '7.1';
     const votes = chance.integer({ min: 20000, max: 150000 });

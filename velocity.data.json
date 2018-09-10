@@ -1,5 +1,5 @@
 {
-  "title": "Wix Stack React Example Application",
+  "title": "Movie explorer",
   "debug": true,
   "experiments": {
 
@@ -8,7 +8,7 @@
   "basename": "/",
   "clientTopology": {
     "staticsDomain": "static.parastorage.com",
-    "staticsBaseUrl": "http://localhost:3200/"
+    "staticsBaseUrl": "http://192.168.1.7:3200/"
   },
   "newRelicEndUserHeader": "",
   "newRelicEndUserFooter": ""

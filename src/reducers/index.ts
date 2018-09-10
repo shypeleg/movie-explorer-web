@@ -1,12 +1,14 @@
+import { videosReducer, filterReducer, sortReducer } from './reducers';
 import { combineReducers } from 'redux';
-import { IState, Sort } from '../types/movieExplorerTypes';
+import { IState } from '../types/movieExplorerTypes';
 
-const buildFakeReducer = defaultValue => (state = defaultValue, action) =>
-  state;
+// const buildFakeReducer = defaultValue => (state = defaultValue, action) =>
+//   state;
 
 const initialState = {
-  videos: buildFakeReducer({}),
-  sort: buildFakeReducer(Sort.byRecent),
+  videos: videosReducer,
+  sort: sortReducer,
+  filter: filterReducer,
 };
 
 export const rootReducer: (

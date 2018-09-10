@@ -13,23 +13,13 @@ export function start(port = process.env.PORT || 3000): any {
       saveUninitialized: true,
     }),
   );
-
+  app.use('/_api/videos', (req, res) => {
+    const videos = JSON.parse(fs.readFileSync('movie-data.json', 'utf8'));
+    res.send({ videos });
+  });
   app.use('/', (req, res) => {
     try {
-      if (!req.session.visitCount) {
-        req.session.visitCount = 0;
-      }
-
-      req.session.visitCount++;
-
-      const videosBuffer = fs.readFileSync('movie-data.json', 'utf8');
-      const bla = Buffer.from(videosBuffer).toString('base64');
-      res.send(
-        renderVM('./test/dev/index.vm', {
-          visitCount: req.session.visitCount,
-          videos: bla,
-        }),
-      );
+      res.send(renderVM('./test/dev/index.vm', {}));
     } catch (e) {
       console.log('errorrrr: ', e);
     }

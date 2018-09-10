@@ -1,6 +1,6 @@
 import { MovieExplorerDriver } from './MovieExplorer.driver';
-import 'mocha';
 import { expect, use } from 'chai';
+import * as sinon from 'sinon';
 import * as sinonChai from 'sinon-chai';
 import { clearMocks } from './../../../test/helpers/nock-helpers';
 import renderedMatcher from '../../../test/matchers/rendered';
@@ -23,6 +23,13 @@ describe('Movie Explorer', () => {
   it('should have a header', () => {
     driver.when.render();
     expect(driver.get.header()).to.be.rendered();
+  });
+
+  it('should call fetchVideos', () => {
+    const fetchSpy = sinon.spy();
+    driver.given.fetchVideos(fetchSpy).when.render();
+
+    expect(fetchSpy).to.have.been.calledOnce;
   });
 
   it('should have some video rows', () => {

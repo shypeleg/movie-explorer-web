@@ -1,11 +1,9 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
 import testEnricher from '../../../test/helpers/testsEnricher';
-//import { Chance } from 'chance';
 import { IVideo } from '../../types/movieExplorerTypes';
 import { MovieExplorer, IMovieExplorerProps } from './MovieExplorer';
 import { aVideosBuilder } from '../../../test/builders/VideosBuilder';
-//const chance = new Chance();
 
 export class MovieExplorerDriver {
   component;
@@ -13,6 +11,7 @@ export class MovieExplorerDriver {
   videos: IVideo[] = aVideosBuilder()
     .given.videoCount(5)
     .build();
+  fetchVideos: () => void = () => null;
 
   cleanup() {
     this.component.detach();
@@ -20,12 +19,14 @@ export class MovieExplorerDriver {
 
   buildProps = (): IMovieExplorerProps => ({
     videos: this.videos,
+    fetchVideos: this.fetchVideos,
   });
+
   given = {
-    // items: (items: IItem[]): WidgetDriver => {
-    //   this.items = items;
-    //   return this;
-    // },
+    fetchVideos: (fetchVideos: () => void): MovieExplorerDriver => {
+      this.fetchVideos = fetchVideos;
+      return this;
+    },
   };
 
   when = {
