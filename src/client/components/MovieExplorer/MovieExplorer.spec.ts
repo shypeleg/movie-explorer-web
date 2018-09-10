@@ -2,8 +2,8 @@ import { MovieExplorerDriver } from './MovieExplorer.driver';
 import { expect, use } from 'chai';
 import * as sinon from 'sinon';
 import * as sinonChai from 'sinon-chai';
-import { clearMocks } from './../../../test/helpers/nock-helpers';
-import renderedMatcher from '../../../test/matchers/rendered';
+import { clearMocks } from '../../../../test/helpers/nock-helpers';
+import renderedMatcher from '../../../../test/matchers/rendered';
 
 use(sinonChai);
 use(renderedMatcher);

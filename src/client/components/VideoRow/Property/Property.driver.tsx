@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
-import testEnricher from '../../../../test/helpers/testsEnricher';
+import testEnricher from '../../../../../test/helpers/testsEnricher';
 import { Property, IPropertyProps } from './Property';
 import { textTestkitFactory } from 'wix-style-react/dist/testkit/enzyme';
 

@@ -1,7 +1,7 @@
 import 'mocha';
 import { expect, use } from 'chai';
 import { PropertyDriver } from './Property.driver';
-import renderedMatcher from '../../../../test/matchers/rendered';
+import renderedMatcher from '../../../../../test/matchers/rendered';
 import { Chance } from 'chance';
 
 const chance = new Chance();

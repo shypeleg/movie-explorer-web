@@ -1,11 +1,11 @@
 import {
   aVideoBuilder,
   VideoBuilder,
-} from './../../../test/builders/VideoBuilder';
+} from '../../../../test/builders/VideoBuilder';
 import { VideoRowDriver } from './VideoRow.driver';
 import 'mocha';
 import { expect, use } from 'chai';
-import renderedMatcher from '../../../test/matchers/rendered';
+import renderedMatcher from '../../../../test/matchers/rendered';
 import { Chance } from 'chance';
 
 const chance = new Chance();

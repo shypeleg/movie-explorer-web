@@ -1,5 +1,5 @@
 import { aVideoBuilder } from './VideoBuilder';
-import { IVideo } from './../../src/types/movieExplorerTypes';
+import { IVideo } from './../../src/client/types/movieExplorerTypes';
 
 export class VideosBuilder {
   videos: IVideo[];

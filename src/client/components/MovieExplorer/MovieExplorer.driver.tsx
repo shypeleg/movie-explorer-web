@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
-import testEnricher from '../../../test/helpers/testsEnricher';
+import testEnricher from '../../../../test/helpers/testsEnricher';
 import { IVideo } from '../../types/movieExplorerTypes';
 import { MovieExplorer, IMovieExplorerProps } from './MovieExplorer';
-import { aVideosBuilder } from '../../../test/builders/VideosBuilder';
+import { aVideosBuilder } from '../../../../test/builders/VideosBuilder';
 
 export class MovieExplorerDriver {
   component;

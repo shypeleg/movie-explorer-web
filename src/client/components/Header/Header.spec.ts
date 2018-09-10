@@ -1,6 +1,6 @@
 import { HeaderDriver } from './Header.driver';
 import { expect, use } from 'chai';
-import renderedMatcher from '../../../test/matchers/rendered';
+import renderedMatcher from '../../../../test/matchers/rendered';
 
 use(renderedMatcher);
 

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
-import testEnricher from '../../../test/helpers/testsEnricher';
+import testEnricher from '../../../../test/helpers/testsEnricher';
 import { Filter, Sort } from '../../types/movieExplorerTypes';
 import { Header, IHeaderProps } from './Header';
 

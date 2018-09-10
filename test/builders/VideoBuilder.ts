@@ -1,4 +1,4 @@
-import { IVideo } from './../../src/types/movieExplorerTypes';
+import { IVideo } from './../../src/client/types/movieExplorerTypes';
 import { Chance } from 'chance';
 
 const chance = new Chance();

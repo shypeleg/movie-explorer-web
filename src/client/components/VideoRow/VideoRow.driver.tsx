@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
-import testEnricher from '../../../test/helpers/testsEnricher';
+import testEnricher from '../../../../test/helpers/testsEnricher';
 import { IVideo } from '../../types/movieExplorerTypes';
 import { VideoRow, IVideoRowProps } from './VideoRow';
-import { aVideoBuilder } from '../../../test/builders/VideoBuilder';
+import { aVideoBuilder } from '../../../../test/builders/VideoBuilder';
 import { textTestkitFactory } from 'wix-style-react/dist/testkit/enzyme';
 
 export class VideoRowDriver {
