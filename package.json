@@ -78,7 +78,7 @@
   },
   "yoshi": {
     "entry": {
-      "dev": "../test/dev/dev.tsx"
+      "dev": "../src/server/dev.tsx"
     },
     "externals": {}
   }

@@ -19,7 +19,7 @@ export function start(port = process.env.PORT || 3000): any {
   });
   app.use('/', (req, res) => {
     try {
-      res.send(renderVM('./test/dev/index.vm', {}));
+      res.send(renderVM('./src/server/index.vm', {}));
     } catch (e) {
       console.log('errorrrr: ', e);
     }
