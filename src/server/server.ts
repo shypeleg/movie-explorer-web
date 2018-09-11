@@ -1,9 +1,20 @@
+import { FileWatcher } from './scraper/FileWatcher';
 import * as express from 'express';
 import * as session from 'express-session';
-import { renderVM } from './vm';
-import * as fs from 'fs';
+import { renderVM, loadData } from './vm';
 
-export function start(port = process.env.PORT || 3000): any {
+export const start = async (port = process.env.PORT || 3000): Promise<any> => {
+  console.log('loading data');
+  const config = loadData('./config.data.json');
+  const configPrivate = loadData('./config.private.data.json');
+
+  const watcher = new FileWatcher();
+  await watcher.load(
+    config.watchFolders[0],
+    config.imdb_api_key || configPrivate.imdb_api_key,
+  );
+  watcher.watch();
+  console.log('loaded');
   const app = express();
 
   app.use(
@@ -14,8 +25,7 @@ export function start(port = process.env.PORT || 3000): any {
     }),
   );
   app.use('/_api/videos', (req, res) => {
-    const videos = JSON.parse(fs.readFileSync('movie-data.json', 'utf8'));
-    res.send({ videos });
+    res.send({ videos: watcher.getDatabase() });
   });
   app.use('/', (req, res) => {
     try {
@@ -29,4 +39,4 @@ export function start(port = process.env.PORT || 3000): any {
   return app.listen(port, () => {
     console.info(`Fake server is running on port ${port}`);
   });
-}
+};

@@ -4,6 +4,7 @@ target
 coverage
 typings
 maven
+config.private.data.js
 velocity.private.data.js
 test/e2e/screenshots
 package-lock.json

@@ -28,14 +28,16 @@ export interface IVideo {
   fileName: string;
   filePath: string;
   searchableName: string;
-  imdbId: string;
+  imdbId?: string;
   searchEngineImdbLink?: string;
   imdbData?: IMovie;
   fileInfo?: {
     accessTime: Date;
     modifiedTime: Date;
+    fileSizeMB: number;
   };
 }
+
 export type IRatings = [
   {
     Source: RatingSources;
@@ -63,3 +65,34 @@ export interface IState {
   sort: Sort;
   filter: Filter;
 }
+
+export const movieFileTypes = [
+  'mpg2',
+  'mov',
+  'avi',
+  'vob',
+  'flc',
+  'mpeg',
+  'movie',
+  'avs',
+  'xvid',
+  'webm',
+  'mv',
+  'ogg',
+  'r3d',
+  'dv',
+  'mp4',
+  'flv',
+  'm2ts',
+  'mts',
+  'wmv',
+  'mpg',
+  'divx',
+  'ogv',
+  'mxf',
+  'mkv',
+  'm2t',
+  'm4v',
+  'ts',
+  'm2v',
+];
