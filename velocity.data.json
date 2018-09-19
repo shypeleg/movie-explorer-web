@@ -8,7 +8,7 @@
   "basename": "/",
   "clientTopology": {
     "staticsDomain": "static.parastorage.com",
-    "staticsBaseUrl": "http://192.168.1.7:3200/"
+    "staticsBaseUrl": "http://192.168.1.4:3200/"
   },
   "newRelicEndUserHeader": "",
   "newRelicEndUserFooter": ""

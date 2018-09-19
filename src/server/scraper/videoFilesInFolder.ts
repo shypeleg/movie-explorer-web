@@ -16,25 +16,27 @@ export const videoFilesInFolder = async (
     },
   });
 
-  const files: IVideo[] = paths.map(filePath => {
-    const basefileName = path.basename(filePath);
-    const fileInfo = fs.statSync(filePath);
-
-    const searchableName = clearTorrentName(
-      path.basename(filePath, path.extname(filePath)),
-    );
-    //console.log(`${path.basename(filePath, path.extname(filePath))} --->>> : ${searchableName}`);
-    //console.log(`${searchableName}`);
-    return {
-      fileName: basefileName,
-      filePath,
-      searchableName,
-      fileInfo: {
-        accessTime: fileInfo.atime,
-        modifiedTime: fileInfo.mtime,
-        fileSizeMB: fileInfo.size / 1024 / 1024,
-      },
-    };
-  });
+  const files: IVideo[] = paths.map(filePath => fileInfoFromPath(filePath));
   return files.filter(file => file.fileInfo.fileSizeMB > minSizeMB);
+};
+
+export const fileInfoFromPath = (filePath: string): IVideo => {
+  const basefileName = path.basename(filePath);
+  const fileInfo = fs.statSync(filePath);
+
+  const searchableName = clearTorrentName(
+    path.basename(filePath, path.extname(filePath)),
+  );
+  //console.log(`${path.basename(filePath, path.extname(filePath))} --->>> : ${searchableName}`);
+  //console.log(`${searchableName}`);
+  return {
+    fileName: basefileName,
+    filePath,
+    searchableName,
+    fileInfo: {
+      accessTime: fileInfo.atime,
+      modifiedTime: fileInfo.mtime,
+      fileSizeMB: fileInfo.size / 1024 / 1024,
+    },
+  };
 };

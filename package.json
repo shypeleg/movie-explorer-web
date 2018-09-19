@@ -48,7 +48,7 @@
     "sinon": "^3.2.1",
     "sinon-chai": "^2.13.0",
     "tslint": "^5.8.0",
-    "typescript": "2.5.2",
+    "typescript": "^2.5.2",
     "velocity": "~0.7.0",
     "wix-eventually": "^2.2.0",
     "yoshi": "^3.4.0",

@@ -37,6 +37,6 @@ export const start = async (port = process.env.PORT || 3000): Promise<any> => {
   });
 
   return app.listen(port, () => {
-    console.info(`Fake server is running on port ${port}`);
+    console.info(`Movie Explorer Web server is running on port ${port}`);
   });
 };
